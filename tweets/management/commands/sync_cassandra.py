@@ -4,7 +4,8 @@ from django.core.management.base import NoArgsCommand
 class Command(NoArgsCommand):
 
     def handle_noargs(self, **options):
-        cluster = Cluster(['127.0.0.1'])
+        #cluster = Cluster(['127.0.0.1'])
+        cluster = Cluster(['cass'])
         session = cluster.connect()
 
         rows = session.execute(

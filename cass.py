@@ -4,7 +4,8 @@ import random
 
 from cassandra.cluster import Cluster
 
-cluster = Cluster(['127.0.0.1'])
+#cluster = Cluster(['127.0.0.1'])
+cluster = Cluster(['cass'])
 session = cluster.connect('twissandra')
 
 # Prepared statements, reuse as much as possible by binding new values
