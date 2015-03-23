@@ -5,6 +5,8 @@ class Command(NoArgsCommand):
 
     def handle_noargs(self, **options):
         #cluster = Cluster(['127.0.0.1'])
+        
+        print "locate cluster try "
         cluster = Cluster(['cass'])
         session = cluster.connect()
 

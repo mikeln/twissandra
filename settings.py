@@ -28,6 +28,9 @@ DATABASES = {
             'replication': {
                 'strategy_class': 'SimpleStrategy',
                 'replication_factor': 1
+            },
+            'session': {
+                'default_timeout': 120
             }
         }
     }
