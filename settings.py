@@ -71,10 +71,10 @@ LOGGING = {
             'handlers': ['file','console'],
             'level': 'DEBUG'
         },
-    },
-    'root': {
-        'level': 'DEBUG',
-        'handlers': ['console']
+#    },
+#    'root': {
+#        'level': 'DEBUG',
+#        'handlers': ['console']
     }
 }
 # Local time zone for this installation. Choices can be found here:
