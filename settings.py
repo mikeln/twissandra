@@ -58,14 +58,18 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers':['file'],
+            'handlers':['file','console'],
             'propagate': True,
             'level':'DEBUG',
         },
-        'MYAPP': {
-            'handlers': ['file'],
+        'twissandra': {
+            'handlers': ['file','console'],
             'level': 'DEBUG',
         },
+        'core.handlers': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+         },
     }
 }
 # Local time zone for this installation. Choices can be found here:
@@ -73,7 +77,7 @@ LOGGING = {
 # although not all choices may be available on all operating systems.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'US/Pacific'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
