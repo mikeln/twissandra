@@ -9,9 +9,14 @@ from tweets.forms import TweetForm
 
 import cass
 
+import logging
+logger = logging.getLogger(__name__)
+
 NUM_PER_PAGE = 40
 
 def timeline(request):
+    logger.info("test test test")
+
     form = TweetForm(request.POST or None)
     if request.user['is_authenticated'] and form.is_valid():
         tweet_id = uuid.uuid4()
