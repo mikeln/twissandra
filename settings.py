@@ -71,7 +71,7 @@ LOGGING = {
             'handlers': ['file','console'],
             'level': 'DEBUG'
         },
-        'core.handlers': {
+        'django.core.handlers': {
             'level': 'DEBUG',
             'handlers': ['console']
          }
