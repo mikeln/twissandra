@@ -55,20 +55,24 @@ LOGGING = {
             'filename': 'mytwiss.log',
             'formatter': 'verbose'
         },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
     },
     'loggers': {
         'django': {
             'handlers':['file','console'],
             'propagate': True,
-            'level':'DEBUG',
+            'level':'DEBUG'
         },
         'twissandra': {
             'handlers': ['file','console'],
-            'level': 'DEBUG',
+            'level': 'DEBUG'
         },
         'core.handlers': {
             'level': 'DEBUG',
-            'handlers': ['console'],
+            'handlers': ['console']
          },
     }
 }
