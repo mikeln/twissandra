@@ -73,7 +73,7 @@ LOGGING = {
         'core.handlers': {
             'level': 'DEBUG',
             'handlers': ['console']
-         },
+         }
     }
 }
 # Local time zone for this installation. Choices can be found here:
