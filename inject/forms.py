@@ -5,7 +5,7 @@ import cass
 class InjectForm(forms.Form):
     numusers = forms.IntegerField(max_value=100000, min_value=-2)
     numtweets = forms.IntegerField(max_value=100000, min_value=-2)
-    secdelay = forms.forms.IntegerField(max_value=36400, min_value=0)
+    secdelay = forms.IntegerField(max_value=36400, min_value=0)
     distroflag = forms.BooleanField(required=False)
 
     def clean(self):
