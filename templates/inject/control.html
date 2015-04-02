@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Inject Control - {{ block.super }}{% endblock %}
+
+{% block content %}
+    <div class="grid_9 alpha">
+        <div class="auth grid_4 prefix_1 alpha" id="signin">
+            <h2 class="grid_4">Inject Data</h2>
+            <form method="POST">
+                <ul>
+                    {{ inject_form.as_ul }}
+                </ul>
+                <input type="hidden" name="kind" value="login" />
+                {% if next %}
+                    <input type="hidden" name="next" value="{{ next }}" />
+                {% endif %}
+                <input type="submit" value="Inject" />
+            </form>
+        </div>
+    </div>
+{% endblock %}
