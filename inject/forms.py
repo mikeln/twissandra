@@ -3,10 +3,10 @@ from django import forms
 import cass
 
 class InjectForm(forms.Form):
-    numusers = forms.IntegerField(label='Number of New Users to Add', max_value=100000, min_value=-2)
-    numtweets = forms.IntegerField(label='Number of New Tweets to Add', max_value=100000, min_value=-2)
-    secdelay = forms.IntegerField(label='Delay between tweets (sec)', max_value=36400, min_value=0)
-    distroflag = forms.BooleanField(label='Use Random Distribution', required=False)
+    numusers = forms.IntegerField(label='New Users', max_value=100000, min_value=-2)
+    numtweets = forms.IntegerField(label='New Tweets', max_value=100000, min_value=-2)
+    secdelay = forms.IntegerField(label='Delay (sec)', max_value=36400, min_value=0)
+    distroflag = forms.BooleanField(label='Random Dist', required=False)
 
     def clean(self):
         # no additional validation
