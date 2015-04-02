@@ -146,4 +146,5 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'tweets',
     'users',
+    'inject',
 )
