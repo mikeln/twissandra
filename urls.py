@@ -4,6 +4,7 @@ from django.conf import settings
 urlpatterns = patterns('',
     url('^auth/', include('users.urls')),
     url('', include('tweets.urls')),
+    url('^inject_data/', include('inject.urls')),
 )
 
 if settings.DEBUG:
