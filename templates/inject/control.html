@@ -10,7 +10,6 @@
                 <ul>
                     {{ inject_form.as_ul }}
                 </ul>
-                <input type="hidden" name="kind" value="login" />
                 {% if next %}
                     <input type="hidden" name="next" value="{{ next }}" />
                 {% endif %}

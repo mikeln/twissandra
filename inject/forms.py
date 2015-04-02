@@ -3,22 +3,26 @@ from django import forms
 import cass
 
 class InjectForm(forms.Form):
-    username = forms.CharField(max_length=30)
-    password = forms.CharField(widget=forms.PasswordInput(render_value=False))
+    numusers = forms.IntergerField(max_value=100000, min_value=-2)
+    numtweets = forms.IntergerField(max_value=100000, min_value=-2)
+    secdelay = forms.forms.IntergerField(max_value=36400, min_value=0)
+    distroflag = forms.BooleanField(required=False)
 
     def clean(self):
-        numusers = self.cleaned_data['numusers']
-        numtweets = self.cleaned_data['numtweets']
-        distroflag = self.cleaned_data['distroflag']
-        numtweets = self.cleaned_data['numtweets']
-        #try:
-        #    user = cass.get_user_by_username(username)
-        #except cass.DatabaseError:
-        #    raise forms.ValidationError(u'Invalid username and/or password')
-        #if user.password != password:
-        #    raise forms.ValidationError(u'Invalid username and/or password')
+        # no additional validation
+        numusers = self.cleaned_data.get('numusers')
+        numtweets = self.cleaned_data.get('numtweets')
+        secdelay = self.cleaned_data.get('secdelay')
+        distroflag = self.cleaned_data.get('distroflag')
         return self.cleaned_data
 
-    def get_username(self):
-        return self.cleaned_data['username']
+    def inject(self):
+        numusers = self.cleaned_data.get('numusers')
+        numtweets = self.cleaned_data.get('numtweets')
+        secdelay = self.cleaned_data.get('secdelay')
+        distroflag = self.cleaned_data.get('distroflag')
+        #
+        # call injection here?
+        #
+        return self.cleaned_data
 
