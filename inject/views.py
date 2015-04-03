@@ -16,6 +16,7 @@ NUM_PER_PAGE = 40
 
 def inject_data(request):
     logger.info("NEW Function inject_data")
+    logger.info(request.headers)
 
     context = {}
     if request.method == 'POST':
@@ -29,7 +30,7 @@ def inject_data(request):
             #
             # do work here
             #
-            logger.info("TODO: work")
+            logger.info("TODO: work ")
     else:
         inject_form = InjectForm(initial={'numusers':10,'numtweets':10,'secdelay':0,'distroflag':False} )
         next = request.REQUEST.get('next')
