@@ -25,7 +25,7 @@ def inject_data(request):
             'inject_form': inject_form,
             'next': next,
         }
-        if form.is_valid():
+        if inject_form.is_valid():
             #
             # do work here
             #
