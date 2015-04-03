@@ -36,7 +36,7 @@ def inject_data(request):
             tmpdelay = inject_form.cleaned_data['secdelay']
             tmpflag = inject_form.cleaned_data['distroflag']
 
-            inject_job = Worker()
+            inject_job = worker.Worker()
             inject_job.inject(tmpusers, tmptweet, tmpdelay, tmpflag)
 
     else:
