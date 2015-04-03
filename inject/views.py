@@ -15,9 +15,17 @@ logger = logging.getLogger(__name__)
 NUM_PER_PAGE = 40
 
 def inject_data(request):
-    logger.debug("NEW Function inject_data")
+    logger.info("NEW Function inject_data")
 
-    inject_form = InjectForm(initial={'numusers':10,'numtweets':10,'secdelay':0,'distroflag':False} )
+    if request.methog == 'POST':
+        form = InjectForm(request.POST)
+        if form.is_valid():
+            #
+            # do work here
+            #
+            logger.info("TODO: work")
+        else:
+            inject_form = InjectForm(initial={'numusers':10,'numtweets':10,'secdelay':0,'distroflag':False} )
     #
     next = request.REQUEST.get('next')
 
