@@ -30,7 +30,7 @@ def inject_data(request):
             # do work here
             #
             logger.info("TODO: work")
-   else:
+    else:
         inject_form = InjectForm(initial={'numusers':10,'numtweets':10,'secdelay':0,'distroflag':False} )
         next = request.REQUEST.get('next')
         context = {
