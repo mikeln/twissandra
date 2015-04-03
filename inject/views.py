@@ -29,8 +29,8 @@ def inject_data(request):
             # do work here
             #
             logger.info("TODO: work ")
-            tmpusers = inject_form.get('numusers')
-            tmptweets = inject_form.get('numtweets')
+            tmpusers = inject_form.numusers
+            tmptweets = inject_form.numtweets
             logger.info("user: %s  twts: %s", tmpusers,tmptweets)
     else:
         inject_form = InjectForm(initial={'numusers':10,'numtweets':10,'secdelay':0,'distroflag':False} )
