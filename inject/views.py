@@ -28,8 +28,11 @@ def inject_data(request):
             #
             # do work here
             #
-            logger.info("TODO: work ")
-            logger.info("user: %s  ", inject_form.cleaned_data )
+            logger.info("WORK! form_data: %s  ", inject_form.cleaned_data )
+            tmpusers = inject_form.cleaned_data['numusers']
+            tmptweet = inject_form.cleaned_data['numtweets']
+            tmpdelay = inject_form.cleaned_data['secdelay']
+            tmpflag = inject_form.cleaned_data['distroflag']
     else:
         inject_form = InjectForm(initial={'numusers':10,'numtweets':10,'secdelay':0,'distroflag':False} )
         next = request.REQUEST.get('next')
