@@ -16,13 +16,3 @@ class InjectForm(forms.Form):
         distroflag = self.cleaned_data.get('distroflag')
         return self.cleaned_data
 
-    def inject(self):
-        numusers = self.cleaned_data.get('numusers')
-        numtweets = self.cleaned_data.get('numtweets')
-        secdelay = self.cleaned_data.get('secdelay')
-        distroflag = self.cleaned_data.get('distroflag')
-        #
-        # call injection here?
-        #
-        return self.cleaned_data
-

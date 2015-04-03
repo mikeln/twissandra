@@ -7,6 +7,8 @@ from django.core.urlresolvers import reverse
 
 from inject.forms import InjectForm
 
+import worker
+
 import cass
 
 import logging
@@ -33,6 +35,10 @@ def inject_data(request):
             tmptweet = inject_form.cleaned_data['numtweets']
             tmpdelay = inject_form.cleaned_data['secdelay']
             tmpflag = inject_form.cleaned_data['distroflag']
+
+            inject_job = Worker()
+            inject_job.inject(tmpusers, tmptweet, tmpdelay, tmpflag)
+
     else:
         inject_form = InjectForm(initial={'numusers':10,'numtweets':10,'secdelay':0,'distroflag':False} )
         next = request.REQUEST.get('next')
