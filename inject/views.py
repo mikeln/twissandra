@@ -17,7 +17,7 @@ NUM_PER_PAGE = 40
 def inject_data(request):
     logger.info("NEW Function inject_data")
 
-    if request.methog == 'POST':
+    if request.method == 'POST':
         form = InjectForm(request.POST)
         if form.is_valid():
             #
