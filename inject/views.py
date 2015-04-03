@@ -17,22 +17,28 @@ NUM_PER_PAGE = 40
 def inject_data(request):
     logger.info("NEW Function inject_data")
 
+    context = {}
     if request.method == 'POST':
         form = InjectForm(request.POST)
+        next = request.REQUEST.get('next')
+        context = {
+            'inject_form': inject_form,
+            'next': next,
+        }
         if form.is_valid():
             #
             # do work here
             #
             logger.info("TODO: work")
-        else:
-            inject_form = InjectForm(initial={'numusers':10,'numtweets':10,'secdelay':0,'distroflag':False} )
+   else:
+        inject_form = InjectForm(initial={'numusers':10,'numtweets':10,'secdelay':0,'distroflag':False} )
+        next = request.REQUEST.get('next')
+        context = {
+            'inject_form': inject_form,
+            'next': next,
+        }
     #
-    next = request.REQUEST.get('next')
 
-    context = {
-        'inject_form': inject_form,
-        'next': next,
-    }
     return render_to_response(
         'inject/control.html', context, context_instance=RequestContext(request))
 
