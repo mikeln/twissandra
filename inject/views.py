@@ -19,7 +19,7 @@ def inject_data(request):
 
     context = {}
     if request.method == 'POST':
-        form = InjectForm(request.POST)
+        inject_form = InjectForm(request.POST)
         next = request.REQUEST.get('next')
         context = {
             'inject_form': inject_form,
