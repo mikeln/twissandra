@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 class Worker():
 
-    def inject(num_users, max_tweets, delay_sec, random_flag):
+    def inject(self, num_users, max_tweets, delay_sec, random_flag):
         # Oldest account is 10 years
         origin = int(
             time.time() +
