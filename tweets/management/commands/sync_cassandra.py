@@ -6,7 +6,7 @@ from django.core.management.base import BaseCommand
 class Command(BaseCommand):
 
     #def handle_noargs(self, **options):
-    def handle_noargs(self, *args, **options):
+    def handle_args(self, *args, **options):
         force_arg = "n"
         if len(args) == 1:
             force_arg = args[0]
