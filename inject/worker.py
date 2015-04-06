@@ -10,6 +10,8 @@ import cass
 import logging
 logger = logging.getLogger(__name__)
 
+import names
+
 class Worker():
 
     def inject(self, num_users, max_tweets, delay_sec, random_flag):
@@ -30,7 +32,7 @@ class Worker():
         num_tweets = [int(x * normalizer) for x in sample]
 
         for i in range(num_users):
-            username = self.get_random_string()
+            username = self.get_random_name()
             cass.save_user(username, self.get_random_string())
             creation_date = random.randint(origin, now)
 
@@ -56,3 +58,8 @@ class Worker():
 
     def get_random_string(self):
         return ''.join(random.sample(string.letters, 10))
+
+    def get_random_name(self):
+        tlist = [ names.get_last_name() ]
+        tlist = tlist + random.sample(string.letters, 5)
+        return ''.join( tlist )

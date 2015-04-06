@@ -19,6 +19,13 @@ NUM_PER_PAGE = 40
 def inject_data(request):
     logger.info("NEW Function inject_data")
     context = {}
+    if request.is_ajax():
+        # ajax
+        logger.info("AJAX REQUEST")
+    else:
+        # regular
+        logger.info("NON-AJAX REQUEST")
+
     if request.method == 'POST':
         inject_form = InjectForm(request.POST)
         next = request.REQUEST.get('next')
