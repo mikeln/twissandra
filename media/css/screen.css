@@ -19,7 +19,7 @@ li.more { font-size: 1.6em; background-color: #F7F7F7; text-align: center; }
 #poster textarea { margin-left: 15px; width: 95%; }
 
 #timeline li { border-bottom: 1px solid #F7F7F7; list-style-type: none; margin: 0 12px 0 12px; padding: 12px 0 12px 12px; }
-#timeline li .username { width: 80px; display: block; float: left; }
+#timeline li .username { width: 100px; display: block; float: left; }
 
 #sidebar { font-size: 1.2em; padding-top: 25px; color: #FCA377; }
 
