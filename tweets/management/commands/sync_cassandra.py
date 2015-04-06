@@ -22,12 +22,13 @@ class Command(BaseCommand):
             msg = ' It looks like you already have a twissandra keyspace.\nDo you '
             msg += 'want to delete it and recreate it? All current data will '
             msg += 'be deleted! (y/n): '
-            print msg
+            print "%s %s"%(msg,force_arg)
 #            resp = raw_input(msg)
 #            if not resp or resp[0] != 'y':
             if force_arg  != 'y':
-                print "Ok, then we're done here."
+                print "Ok, nothing deleted."
                 return
+            print "Deleting ALL data."
             session.execute("DROP KEYSPACE twissandra")
 
         session.execute("""
