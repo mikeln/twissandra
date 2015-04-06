@@ -1,8 +1,6 @@
 import uuid
 
 from django.shortcuts import render_to_response
-#csrf
-from django.template.context_processors import csrf
 from django.template import RequestContext
 from django.http import HttpResponseRedirect, Http404
 from django.core.urlresolvers import reverse
@@ -21,8 +19,6 @@ NUM_PER_PAGE = 40
 def inject_data(request):
     logger.info("NEW Function inject_data")
     context = {}
-    #csrf
-    context.update(csrf(request))
     if request.is_ajax():
         # ajax
         logger.info("AJAX REQUEST")
