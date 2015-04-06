@@ -1,10 +1,15 @@
 from cassandra.cluster import Cluster
-from django.core.management.base import NoArgsCommand
+#from django.core.management.base import NoArgsCommand
+from django.core.management.base import BaseCommand
 
-class Command(NoArgsCommand):
+#class Command(NoArgsCommand):
+class Command(BaseCommand):
 
-    def handle_noargs(self, **options):
-        #cluster = Cluster(['127.0.0.1'])
+    #def handle_noargs(self, **options):
+    def handle_noargs(self, *args, **options):
+        force_arg = "n"
+        if len(args) == 1:
+            force_arg = args[0]
         
         print "locate cluster try "
         cluster = Cluster(['cass'])
@@ -17,8 +22,10 @@ class Command(NoArgsCommand):
             msg = ' It looks like you already have a twissandra keyspace.\nDo you '
             msg += 'want to delete it and recreate it? All current data will '
             msg += 'be deleted! (y/n): '
-            resp = raw_input(msg)
-            if not resp or resp[0] != 'y':
+            print msg
+#            resp = raw_input(msg)
+#            if not resp or resp[0] != 'y':
+            if force_arg  != 'y':
                 print "Ok, then we're done here."
                 return
             session.execute("DROP KEYSPACE twissandra")
