@@ -33,6 +33,7 @@ class Worker():
 
         for i in range(num_users):
             username = self.get_random_name()
+            logger.info("NEW USER: %s",username)
             cass.save_user(username, self.get_random_string())
             creation_date = random.randint(origin, now)
 
