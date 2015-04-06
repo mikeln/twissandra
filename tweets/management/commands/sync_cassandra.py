@@ -8,10 +8,10 @@ class Command(BaseCommand):
     #def handle_noargs(self, **options):
     def handle(self, *args, **options):
         force_arg = "n"
-        if len(args) == 1:
+        if len(args) > 0:
             force_arg = args[0]
         
-        print "locate cluster try "
+        print "locate cluster try force:%s "%force_arg
         cluster = Cluster(['cass'])
         session = cluster.connect()
 
