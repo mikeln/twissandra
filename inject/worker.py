@@ -61,6 +61,6 @@ class Worker():
         return ''.join(random.sample(string.letters, 10))
 
     def get_random_name(self):
-        tlist = [ names.get_last_name() ]
-        tlist = tlist + random.sample(string.letters, 5)
+        tlist = [ names.get_last_name(),"-" ]
+        tlist = tlist + random.sample(string.letters, 4)
         return ''.join( tlist )
