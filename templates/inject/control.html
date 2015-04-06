@@ -6,7 +6,7 @@
     <div class="grid_9 alpha">
         <div class="auth grid_4 prefix_1 alpha" id="signin">
             <h2 class="grid_4">Inject Data</h2>
-            <form method="POST">
+            <form method="POST" id="post-form" >
                 <ul>
                     {{ inject_form.as_ul }}
                 </ul>
@@ -16,6 +16,10 @@
                 <input type="submit" value="Inject" />
             </form>
         </div>
-        <progress value="60" max="100"></progress>
+        <div class="auth grid_4 prefix_1 alpha" id="worker">
+            <h3 class="grid_4" id="status">Waiting for Work</h3>
+            <progress id='p' value='0' max='100'><span>0</span>%</progress>
+        </div>
     </div>
+    <script src="main.js"></script>
 {% endblock %}
