@@ -25,7 +25,7 @@ function inject_data() {
 
     $('#progressbar').show();
     $('#progressbar').max = pMax
-    $('#progressbar').value = 0
+    $('#progressbar').value = pMax/2
     
 
     $.ajax({
