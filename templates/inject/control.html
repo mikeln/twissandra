@@ -4,7 +4,7 @@
 
 {% block content %}
     <div class="grid_9 alpha">
-        <div class="auth grid_4 prefix_1 alpha" id="signin">
+        <div class="auth grid_4 prefix_1 alpha" id="inject-form">
             <h2 class="grid_4">Inject Data</h2>
             <form method="POST" id="post-form" >
                 <ul>
@@ -13,7 +13,7 @@
                 {% if next %}
                     <input type="hidden" name="next" value="{{ next }}" />
                 {% endif %}
-                <input type="submit" value="Inject" />
+                <input id="inject-submit" type="submit" value="Inject" />
             </form>
         </div>
         <div class="auth grid_4 prefix_1 alpha" id="worker">

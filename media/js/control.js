@@ -12,6 +12,8 @@ function inject_data() {
     console.log("inject data working") // sanity check
     console.log($('#id_numusers').val()+":"+$('#id_numtweets').val()+":"+$('#id_secdelay').val()+":"+$('#id_distroflag').val())
 
+    var bSub = document.getElementById('inject-submit');
+    bSub.disabled = true;
     var pStatus = document.getElementById('status');
     pStatus.innerHTML="Working";
 
@@ -33,6 +35,7 @@ function inject_data() {
             console.log("success");
 
             pStatus.innerHTML="Finished";
+            bSub.disabled = false;
         },
 
         error : function(xhr,errmsg,err) {
@@ -41,6 +44,7 @@ function inject_data() {
             console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
 
             pStatus.innerHTML="Error";
+            bSub.disabled = false;
         }
     });
 };
