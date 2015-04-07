@@ -2,8 +2,16 @@
 $('#post-form').on('submit', function(event){
     event.preventDefault();
     console.log("form submitted!")  // sanity check
-    create_post();
+    inject_data();
 });
+//
+// form inject_data posting
+//
+funcion inject_data() {
+    console.log("inject data working") // sanity check
+    console.log($('#numusers').val())
+};
+
 //
 // cross site scripting code...from https://gist.github.com/broinjc/db6e0ac214c355c887e5
 // This function gets cookie with a given name
