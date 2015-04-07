@@ -15,6 +15,12 @@
                 {% endif %}
                 <input id="inject-submit" type="submit" value="Inject" />
             </form>
+            <ul class="errorlist">
+                {{ form.name_of_field.errors }}
+            </ul>
+            <ul class="errorlist nonfield">
+                {{ form.non_field_errors }}
+            </ul>
         </div>
         <div class="auth grid_4 prefix_1 alpha" id="worker">
             <h3 class="grid_4" id="status">Waiting for Work</h3>
