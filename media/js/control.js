@@ -20,11 +20,13 @@ function inject_data() {
     var pStatus = document.getElementById('status');
     pStatus.innerHTML="Working";
 
+    var pMax = parseInt($('#id_numusers').val(), 10) * parseInt($('#id_numtweets').val(), 10)
+    console.log( "max: "+pMax)
+
     $('#progressbar').show();
-    $('#progressbar').max = ( parseInt($('#id_numusers').val(), 10) * parseInt($('#id_numtweets').val(), 10) )
+    $('#progressbar').max = pMax
     $('#progressbar').value = 0
     
-    console.log( "max: "+$('#progressbar').max )
 
     $.ajax({
         //url: "inject_data/control/",
