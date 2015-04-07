@@ -50,7 +50,7 @@ function inject_data() {
             pStatus.innerHTML="Error";
         },
 
-        complete : funciont(xhr,textStatus) {
+        complete : function(xhr,textStatus) {
             bSub.disabled = false;
             $('#progressbar').hide();
         }
