@@ -10,10 +10,11 @@ $('#post-form').on('submit', function(event){
 //
 function inject_data() {
     console.log("inject data working") // sanity check
-    console.log($('#id_numusers').val())
-    console.log($('#id_numtweets').val())
-    console.log($('#id_secdelay').val())
-    console.log($('#id_distroflag').val())
+    console.log($('#id_numusers').val()+":"+$('#id_numtweets').val()+":"+$('#id_secdelay').val()+":"+$('#id_distroflag').val())
+
+    var pStatus = document.getElementById('status');
+    pStatus.innerHTML="Working";
+
     $.ajax({
         //url: "inject_data/control/",
         url: "",
