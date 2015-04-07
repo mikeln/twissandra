@@ -9,7 +9,7 @@ $('#post-form').on('submit', function(event){
 //
 function inject_data() {
     console.log("inject data working") // sanity check
-    console.log($('#numusers').val())
+    console.log($('#id_numusers').val())
 };
 
 //
