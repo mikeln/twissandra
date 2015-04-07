@@ -40,7 +40,6 @@ function inject_data() {
             console.log("success");
 
             pStatus.innerHTML="Finished";
-            bSub.disabled = false;
         },
 
         error : function(xhr,errmsg,err) {
@@ -49,8 +48,13 @@ function inject_data() {
             console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
 
             pStatus.innerHTML="Error";
+        },
+
+        complete : funciont(xhr,textStatus) {
             bSub.disabled = false;
+            $('#progressbar').hide();
         }
+
     });
 };
 
