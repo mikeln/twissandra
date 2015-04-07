@@ -23,6 +23,8 @@ function inject_data() {
     $('#progressbar').show();
     $('#progressbar').max = ( parseInt($('#id_numusers').val(), 10) * parseInt($('#id_numtweets').val(), 10) )
     $('#progressbar').value = 0
+    
+    console.log( "max: "+$('#progressbar').max )
 
     $.ajax({
         //url: "inject_data/control/",
