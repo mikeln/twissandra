@@ -11,6 +11,32 @@ $('#post-form').on('submit', function(event){
 function inject_data() {
     console.log("inject data working") // sanity check
     console.log($('#id_numusers').val())
+    console.log($('#id_numtweets').val())
+    console.log($('#id_secdelay').val())
+    console.log($('#id_distroflag').val())
+    $.ajax({
+        url: "inject_data/control/",
+        type: "POST",
+        data: { numusers : $('#id_numusers').val(),
+            numtweets : $('#id_numtweets').val(),
+            secdelay : $('#id_secdelay').val(),
+            distroflag : $('#id_distroflag').val() },
+        
+        success : function(json) {
+            $('#id_numusers').val('0');
+            $('#id_numtweets').val('0');
+            $('#id_secdelay').val('0');
+            //$('#id_distroflag').val();
+            console.log(json);
+            console.log("success");
+        },
+
+        error : function(xhr,errmsg,err) {
+            $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
+                                            " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+            console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+        }
+    });
 };
 
 //
