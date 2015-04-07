@@ -1,4 +1,7 @@
 $(function(){
+
+$('#progressbar').hide();
+
 // Submit post on submit
 $('#post-form').on('submit', function(event){
     event.preventDefault();
@@ -16,6 +19,8 @@ function inject_data() {
     bSub.disabled = true;
     var pStatus = document.getElementById('status');
     pStatus.innerHTML="Working";
+
+    $('#progressbar').show();
 
     $.ajax({
         //url: "inject_data/control/",
