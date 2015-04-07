@@ -15,7 +15,8 @@ function inject_data() {
     console.log($('#id_secdelay').val())
     console.log($('#id_distroflag').val())
     $.ajax({
-        url: "inject_data/control/",
+        //url: "inject_data/control/",
+        url: "",
         type: "POST",
         data: { numusers : $('#id_numusers').val(),
             numtweets : $('#id_numtweets').val(),
