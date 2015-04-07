@@ -31,12 +31,16 @@ function inject_data() {
             //$('#id_distroflag').val();
             console.log(json);
             console.log("success");
+
+            pStatus.innerHTML="Finished";
         },
 
         error : function(xhr,errmsg,err) {
             $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
                                             " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
             console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+
+            pStatus.innerHTML="Error";
         }
     });
 };
