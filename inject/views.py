@@ -47,9 +47,8 @@ def inject_data(request):
             inject_job = worker.Worker()
             inject_job.inject(tmpusers, tmptweet, tmpdelay, tmpflag)
         else:
-            temp_errors = inject_form.errors()
             context = {
-                    'inject_form' : temp_errors
+                    'inject_form' : inject_form
                     }
                     
             return render(request, 'inject/control.html', context)
