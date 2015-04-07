@@ -21,6 +21,8 @@ function inject_data() {
     pStatus.innerHTML="Working";
 
     $('#progressbar').show();
+    $('#progressbar').max = ( parseInt($('#id_numusers').val(), 10) * parseInt($('#id_numtweets').val(), 10) )
+    $('#progressbar').value = 0
 
     $.ajax({
         //url: "inject_data/control/",
