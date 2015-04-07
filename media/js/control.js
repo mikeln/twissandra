@@ -1,3 +1,4 @@
+$(function(){
 // Submit post on submit
 $('#post-form').on('submit', function(event){
     event.preventDefault();
@@ -63,4 +64,6 @@ $.ajaxSetup({
             xhr.setRequestHeader("X-CSRFToken", csrftoken);
         }
     }
+});
+
 });
