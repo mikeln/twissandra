@@ -7,7 +7,7 @@ $('#post-form').on('submit', function(event){
 //
 // form inject_data posting
 //
-funcion inject_data() {
+function inject_data() {
     console.log("inject data working") // sanity check
     console.log($('#numusers').val())
 };
