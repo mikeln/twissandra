@@ -47,6 +47,7 @@ def inject_data(request):
             inject_job = worker.Worker()
             inject_job.inject(tmpusers, tmptweet, tmpdelay, tmpflag)
             
+            response_data={}
             response_data['newtweets'] = tmpusers * tmptweet
             return HttpResponse(
                     json.dumps(response_data),
