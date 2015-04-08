@@ -1,6 +1,6 @@
 $(function(){
 
-$('#spinner').hide();
+//$('#spinner').hide();
 
 // Submit post on submit
 $('#post-form').on('submit', function(event){
