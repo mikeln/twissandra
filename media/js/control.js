@@ -33,7 +33,6 @@ function inject_data() {
     pStatus.innerHTML="Working";
 
     $('#spinner').show();
-    
 
     $.ajax({
         //url: "inject_data/control/",
@@ -45,9 +44,9 @@ function inject_data() {
             distroflag : $('#id_distroflag').val() },
         
         success : function(json) {
-            $('#id_numusers').val('0');
-            $('#id_numtweets').val('0');
-            $('#id_secdelay').val('0');
+            //$('#id_numusers').val('0');
+            //$('#id_numtweets').val('0');
+            //$('#id_secdelay').val('0');
             //$('#id_distroflag').val();
             console.log(json);
             console.log("success");

@@ -46,6 +46,13 @@ def inject_data(request):
 
             inject_job = worker.Worker()
             inject_job.inject(tmpusers, tmptweet, tmpdelay, tmpflag)
+            
+            response_data['newtweets'] = tmpusers * tmptweet
+            return HttpResponse(
+                    json.dumps(response_data),
+                    content_type="application/json"
+                    )
+            #return render(request, 'inject/control.html', context)
         else:
             context = {}
             return render(request, 'inject/control.html', context)
@@ -59,7 +66,6 @@ def inject_data(request):
             'next': next,
         }
     #
-
     #return render_to_response('inject/control.html', context, context_instance=RequestContext(request))
     return render(request, 'inject/control.html', context )
 
