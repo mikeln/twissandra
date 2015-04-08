@@ -1,6 +1,6 @@
 $(function(){
 
-$('#progressbar').hide();
+$('#spinner').hide();
 
 // Submit post on submit
 $('#post-form').on('submit', function(event){
@@ -8,6 +8,18 @@ $('#post-form').on('submit', function(event){
     console.log("form submitted!")  // sanity check
     inject_data();
 });
+//
+// spinner
+//
+var counter = 0;
+setInterval(funcion() {
+    var frames=20;
+    var frameWidth=32;
+    var offset=counter * -frameWidth;
+    document.getElementById("spinner").style.backgroundPosition=offset + "px" + " " + 0 + "px";
+    counter++; if (counter>=frames) counter = 0;
+}, 100);
+
 //
 // form inject_data posting
 //
@@ -20,12 +32,7 @@ function inject_data() {
     var pStatus = document.getElementById('status');
     pStatus.innerHTML="Working";
 
-    var pMax = parseInt($('#id_numusers').val(), 10) * parseInt($('#id_numtweets').val(), 10)
-    console.log( "max: "+pMax)
-
-    $('#progressbar').show();
-    $('#progressbar').max = pMax
-    $('#progressbar').value = pMax/2
+    $('#spinner').show();
     
 
     $.ajax({
@@ -58,7 +65,7 @@ function inject_data() {
 
         complete : function(xhr,textStatus) {
             bSub.disabled = false;
-            $('#progressbar').hide();
+            $('#spinner').hide();
         }
 
     });

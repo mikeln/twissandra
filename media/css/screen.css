@@ -28,3 +28,9 @@ form ul li { margin: 0; padding: 5px 0;}
 .auth label { width: 80px; display: block; float: left;}
 
 .clear { clear: both; }
+
+#spinner {
+    width:32px;
+    height:32px;
+    background-image: url('{{ MEDIA_URL }}/png/477.png" );
+}
