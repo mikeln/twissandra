@@ -15,6 +15,8 @@ import cass
 import logging
 logger = logging.getLogger(__name__)
 
+import json
+
 NUM_PER_PAGE = 40
 
 def inject_data(request):
