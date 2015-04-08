@@ -12,7 +12,7 @@ $('#post-form').on('submit', function(event){
 // spinner
 //
 var counter = 0;
-setInterval(funcion() {
+setInterval(function() {
     var frames=20;
     var frameWidth=32;
     var offset=counter * -frameWidth;
