@@ -48,10 +48,9 @@ function inject_data() {
             //$('#id_numtweets').val('0');
             //$('#id_secdelay').val('0');
             //$('#id_distroflag').val();
-            console.log(json);
-            console.log("success");
+            console.log("success "+json);
 
-            pStatus.innerHTML="Finished";
+            pStatus.innerHTML="Finished added "+json.newtweets+" records";
         },
 
         error : function(xhr,errmsg,err) {
