@@ -3,7 +3,7 @@ import uuid
 from django.shortcuts import render_to_response
 from django.shortcuts import render
 from django.template import RequestContext
-from django.http import HttpResponseRedirect, Http404
+from django.http import HttpResponseRedirect, Http404, HttpResponse
 from django.core.urlresolvers import reverse
 
 from inject.forms import InjectForm
