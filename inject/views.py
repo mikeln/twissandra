@@ -47,10 +47,12 @@ def inject_data(request):
             tmpflag = inject_form.cleaned_data['distroflag']
 
             inject_job = worker.Worker()
-            inject_job.inject(tmpusers, tmptweet, tmpdelay, tmpflag)
+            tmpu, tmpw, tmpt = inject_job.inject(tmpusers, tmptweet, tmpdelay, tmpflag)
             
             response_data={}
-            response_data['newtweets'] = tmpusers * tmptweet
+            response_data['newusers'] = tmpu
+            response_data['newtweets'] = tmpw
+            response_data['newtotal'] = tmpt
             return HttpResponse(
                     json.dumps(response_data),
                     content_type="application/json"

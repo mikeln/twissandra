@@ -54,6 +54,8 @@ class Worker():
             the_ucount += 1
             logger.info("created user: %s tweets: %s total: %s", the_ucount, the_tcount, the_tweet_total)
 
+        return the_ucount, the_tcount, the_tweet_total
+
     def get_tweet(self):
         return loremipsum.get_sentence()
 
