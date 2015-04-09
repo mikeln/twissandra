@@ -40,7 +40,8 @@ function inject_data() {
         type: "POST",
         data: { numusers : $('#id_numusers').val(),
             numtweets : $('#id_numtweets').val(),
-            secdelay : $('#id_secdelay').val(),
+            secdelay : $('#id_secdelay').val() 
+        },
         
         success : function(json) {
             //$('#id_numusers').val('0');
