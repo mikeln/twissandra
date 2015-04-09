@@ -25,7 +25,7 @@ setInterval(function() {
 //
 function inject_data() {
     console.log("inject data working") // sanity check
-    console.log($('#id_numusers').val()+":"+$('#id_numtweets').val()+":"+$('#id_secdelay').val()+":"+$('#id_distroflag').val())
+    console.log($('#id_numusers').val()+":"+$('#id_numtweets').val()+":"+$('#id_secdelay').val() )
 
     var bSub = document.getElementById('inject-submit');
     bSub.disabled = true;
@@ -41,13 +41,11 @@ function inject_data() {
         data: { numusers : $('#id_numusers').val(),
             numtweets : $('#id_numtweets').val(),
             secdelay : $('#id_secdelay').val(),
-            distroflag : $('#id_distroflag').val() },
         
         success : function(json) {
             //$('#id_numusers').val('0');
             //$('#id_numtweets').val('0');
             //$('#id_secdelay').val('0');
-            //$('#id_distroflag').val();
             console.log("success");
 
             pStatus.innerHTML="Finished adding "+json.newusers+" users with "+json.newtweets+" tweets for "+json.newtotal+" total";

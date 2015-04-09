@@ -44,7 +44,8 @@ def inject_data(request):
             tmpusers = inject_form.cleaned_data['numusers']
             tmptweet = inject_form.cleaned_data['numtweets']
             tmpdelay = inject_form.cleaned_data['secdelay']
-            tmpflag = inject_form.cleaned_data['distroflag']
+            #tmpflag = inject_form.cleaned_data['distroflag']
+            tmpflag = 0
 
             inject_job = worker.Worker()
             tmpu, tmpw, tmpt = inject_job.inject(tmpusers, tmptweet, tmpdelay, tmpflag)
@@ -64,7 +65,7 @@ def inject_data(request):
 
 
     else:
-        inject_form = InjectForm(initial={'numusers':10,'numtweets':10,'secdelay':0,'distroflag':False} )
+        inject_form = InjectForm(initial={'numusers':10,'numtweets':10,'secdelay':0} )
         next = request.REQUEST.get('next')
         context = {
             'inject_form': inject_form,
