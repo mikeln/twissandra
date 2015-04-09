@@ -50,7 +50,7 @@ function inject_data() {
             //$('#id_distroflag').val();
             console.log("success "+json);
 
-            pStatus.innerHTML="Finished adding "+json.newtweets+" records";
+            pStatus.innerHTML="Finished adding "+json.newusers+" users with "+json.newtweets+" tweets for "+json.newtotal+" total";
         },
 
         error : function(xhr,errmsg,err) {
