@@ -65,15 +65,15 @@ LOGGING = {
         'django': {
             'handlers':['file','console'],
             'propagate': True,
-            'level':'DEBUG'
+            'level':'INFO'
         },
         'twissandra': {
             'handlers': ['file','console'],
-            'level': 'DEBUG'
+            'level': 'INFO'
         },
     },
     'root': {
-        'level': 'DEBUG',
+        'level': 'INFO',
         'handlers': ['console']
     }
 }
