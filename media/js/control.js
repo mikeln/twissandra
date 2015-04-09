@@ -48,7 +48,7 @@ function inject_data() {
             //$('#id_numtweets').val('0');
             //$('#id_secdelay').val('0');
             //$('#id_distroflag').val();
-            console.log("success "+json);
+            console.log("success");
 
             pStatus.innerHTML="Finished adding "+json.newusers+" users with "+json.newtweets+" tweets for "+json.newtotal+" total";
         },
