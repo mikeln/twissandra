@@ -52,7 +52,7 @@ class Command(BaseCommand):
             print "created user", the_ucount, " tweets:",the_tcount, " total:",the_tweet_total
 
     def get_tweet(self):
-        return ''.join(random.sample(string.letters, 80))
+        return ''.join(random.sample((string.letters)*5, 80))
 
     def get_random_string(self):
         return ''.join(random.sample(string.letters, 10))
