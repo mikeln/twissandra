@@ -30,7 +30,7 @@ DATABASES = {
                 'replication_factor': 1
             },
             'session': {
-                'default_timeout': 120
+                'default_timeout': 480
             }
         }
     }
