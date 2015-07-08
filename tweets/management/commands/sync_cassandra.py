@@ -1,6 +1,7 @@
 from cassandra.cluster import Cluster
 #from django.core.management.base import NoArgsCommand
 from django.core.management.base import BaseCommand
+from django.comf import settings
 
 #class Command(NoArgsCommand):
 class Command(BaseCommand):
@@ -12,7 +13,7 @@ class Command(BaseCommand):
             force_arg = args[0]
         
         print "locate cluster try force:%s "%force_arg
-        cluster = Cluster(['cass'])
+        cluster = Cluster([settings.DATABASE_HOST])
         session = cluster.connect()
 
         rows = session.execute(
