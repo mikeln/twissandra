@@ -22,7 +22,7 @@ DATABASES = {
         'ENGINE': 'django_cassandra_engine',
         'NAME': 'db',
         'TEST_NAME': 'test_db',
-        'HOST': 'cass',
+        'HOST': 'cassandra.default',
         'PORT': '9042',
         'OPTIONS': {
             'replication': {
