@@ -1,7 +1,7 @@
 from cassandra.cluster import Cluster
 #from django.core.management.base import NoArgsCommand
 from django.core.management.base import BaseCommand
-from django.comf import settings
+from django.conf import settings
 
 #class Command(NoArgsCommand):
 class Command(BaseCommand):
