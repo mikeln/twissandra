@@ -14,7 +14,7 @@ DATABASE_ENGINE = 'django_cassandra_engine'           # 'postgresql_psycopg2', '
 DATABASE_NAME = 'db'             # Or path to database file if using sqlite3.
 DATABASE_USER = ''             # Not used with sqlite3.
 DATABASE_PASSWORD = ''         # Not used with sqlite3.
-DATABASE_HOST = 'cassandra.cassandra'             # Set to empty string for localhost. Not used with sqlite3.
+DATABASE_HOST = 'cassandra.cassandra.svc.cluster.local'             # Set to empty string for localhost. Not used with sqlite3.
 DATABASE_PORT = '9042'             # Set to empty string for default. Not used with sqlite3.
 
 DATABASES = {
@@ -22,7 +22,7 @@ DATABASES = {
         'ENGINE': 'django_cassandra_engine',
         'NAME': 'db',
         'TEST_NAME': 'test_db',
-        'HOST': 'cassandra.cassandra',
+        'HOST': 'cassandra.cassandra.svc.cluster.local',
         'PORT': '9042',
         'OPTIONS': {
             'replication': {
