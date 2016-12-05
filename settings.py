@@ -80,7 +80,7 @@ TEMPLATE_DIRS = (
 DATABASES = {
     'default': {
         'ENGINE': 'django_cassandra_engine',
-        'NAME': 'db',
+        'NAME': 'twissandra',
 	'TEST': {
 	    'NAME': 'test_db',
 	 },

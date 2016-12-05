@@ -13,7 +13,7 @@ class Command(BaseCommand):
             force_arg = args[0]
         
         print "locate cluster try force:%s "%force_arg
-        cluster = Cluster(contact_points=[settings.DATABASE_HOST],protocol_version=3)
+        cluster = Cluster([settings.DATABASE_HOST])
         session = cluster.connect()
 
         rows = session.execute(
