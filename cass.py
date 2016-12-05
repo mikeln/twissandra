@@ -7,7 +7,7 @@ from cassandra.cluster import Cluster
 
 #cluster = Cluster(['127.0.0.1'])
 #cluster = Cluster(['cass'])
-cluster = Cluster([settings.DATABASE_HOST])
+cluster = Cluster(contact_points=[settings.DATABASE_HOST],protocol_version=3)
 session = cluster.connect('twissandra')
 
 # Prepared statements, reuse as much as possible by binding new values

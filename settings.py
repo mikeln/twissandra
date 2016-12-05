@@ -81,7 +81,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django_cassandra_engine',
         'NAME': 'db',
-        'TEST_NAME': 'test_db',
+	'TEST': {
+	    'NAME': 'test_db',
+	 },
         'HOST': 'cassandra.cassandra',
         'PORT': '9042',
         'OPTIONS': {
