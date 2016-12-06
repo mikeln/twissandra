@@ -1,10 +1,11 @@
 from datetime import datetime
 from uuid import uuid1, UUID
+from django.conf import settings
 import random
 
 from cassandra.cluster import Cluster
 
-cluster = Cluster(['127.0.0.1'])
+cluster = Cluster([settings.DATABASE_HOST])
 session = cluster.connect('twissandra')
 
 # Prepared statements, reuse as much as possible by binding new values
