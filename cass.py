@@ -5,8 +5,6 @@ import random
 
 from cassandra.cluster import Cluster
 
-#session = cassandra.cluster.Session()
-
 def initDBConnection(database_name):
    global session
    cluster = Cluster(contact_points=[settings.DATABASE_HOST], port=settings.DATABASE_PORT)
@@ -14,6 +12,7 @@ def initDBConnection(database_name):
       session = cluster.connect(database_name)
    else:
       session = cluster.connect()
+   return session
 
 
 # Prepared statements, reuse as much as possible by binding new values
