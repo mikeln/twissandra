@@ -8,7 +8,7 @@ class Command(NoArgsCommand):
 
     def handle_noargs(self, **options):
 
-	session = InitDBConnection()
+	session = cass.initDBConnection()
         #cluster = Cluster([settings.DATABASE_HOST])
         #session = cluster.connect()
 

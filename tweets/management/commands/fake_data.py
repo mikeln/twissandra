@@ -13,7 +13,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 	
-	session = InitDBConnection('twissandra')
+	session = cass.initDBConnection('twissandra')
 
         # Oldest account is 10 years
         origin = int(
