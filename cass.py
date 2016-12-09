@@ -5,8 +5,13 @@ import random
 
 from cassandra.cluster import Cluster
 
-cluster = Cluster([settings.DATABASE_HOST])
-session = cluster.connect('twissandra')
+def InitDBConnection(database_name):
+   cluster = Cluster(contact_points=[settings.DATABASE_HOST], port=settings.DATABASE_PORT)
+   if database_name:
+      session = cluster.connect(database_name)
+   else:
+      session = cluster.connect()
+
 
 # Prepared statements, reuse as much as possible by binding new values
 tweets_query = None
