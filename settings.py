@@ -11,12 +11,28 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'dev.db'             # Or path to database file if using sqlite3.
-DATABASE_USER = ''             # Not used with sqlite3.
-DATABASE_PASSWORD = ''         # Not used with sqlite3.
-DATABASE_HOST = 'cassandra.cassandra'             # Set to empty string for localhost. Not used with sqlite3.
-DATABASE_PORT = 9042             # Set to empty string for default. Not used with sqlite3.
+#DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+#DATABASE_NAME = 'dev.db'             # Or path to database file if using sqlite3.
+#DATABASE_USER = ''             # Not used with sqlite3.
+#DATABASE_PASSWORD = ''         # Not used with sqlite3.
+#DATABASE_HOST = 'cassandra.cassandra'             # Set to empty string for localhost. Not used with sqlite3.
+#DATABASE_PORT = 9042             # Set to empty string for default. Not used with sqlite3.
+
+DATABASES = {
+        'default': {
+            'ENGINE': 'django_cassandra_engint',
+            'NAME': 'db',
+            'TEST_NAME' : 'test_db',
+            'HOST': 'cassandra.cassandra',
+            'PORT': 9042,
+            'OPTIONS': {
+                'replication': {
+                    'stragegy_class': 'SimpleStrategy',
+                    'replication_factor':1
+                    }
+                }
+            }
+        }
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -84,6 +100,7 @@ CACHE_BACKEND = 'locmem:///'
 
 INSTALLED_APPS = (
     'django.contrib.sessions',
+    'django_cassandra_engine',
     'tweets',
     'users',
 )
